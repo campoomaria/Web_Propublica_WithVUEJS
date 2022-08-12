@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon " href="./assets/img/icono1.png" type="imge/x-icon">
+        <link rel="stylesheet" href="./style.css">
+        <title>House starter</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    </head>
+    
+    <body>
+      <header class="header_senate">            
+        <div class="container-fluid d-flex flex-column align-items-center flex-md-row justify-content-md-around">
+          <div class=" d-flex justify-content-md-between">
+            <img src="./assets/img/icono1.png" alt="iconotitle" style="width: 50px; height: 50px">
+            <h1 class="fw-bold">Data Insight Group</h1>
+          </div>
+          <div class="d-flex justify-content-md-between align-items-md-center text-end">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+              <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+            </svg>
+            <i class="bi bi-envelope">&nbsp</i>
+            <a class="email-home" href="info@datainsightgroup.net">info@datainsightgroup.net</a>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg text-white  fixed fs-5 fw-bold" style="background-color: #3b769e;">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Data Insight Group</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-start flex-grow-1 pe-3 ">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Congress113
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                      <li><a class="dropdown-item" href="#">House</a></li>  
+                      <li><a class="dropdown-item" href="./senate-starter-page.html">Senate</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Attendance
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                      <li><a class="dropdown-item" href="./house-attendance-starter-page.html">House</a></li>  
+                      <li><a class="dropdown-item" href="./senate-attendance-starter-page.html">Senate</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Party Loyalty
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                      <li><a class="dropdown-item" href="./house-party-loyalty-starter-page.html">House</a></li>  
+                      <li><a class="dropdown-item" href="./senate-party-loyalty-starter-page.html">Senate</a></li>
+                    </ul>
+                  </li>
+                </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+          </header>
+          <div class="container-fluid d-flex flex-column  align-items-center " id="senate">
+            {{filtrar}}
+            <h2 class="title_senate text-center">Congressmen</h2>
+            <p class="text_p">The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and Senate re-pass the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect the U.S. President in case there is no majority in the Electoral College.
+
+            <p class="text_p"> Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative.</p> 
+            </p>
+
+            <h6 class="fw-bold text-center">Filters by state and Party</h6>
+            <div class="container_form_senate align-items-center">
+              <form class="d-flex flex-row flex-wrap" id="formulario">
+                  <select v-model="State" name="form-select" >
+                    <option value="ALL">ALL</option>
+                    <option v-for="statemember in copiaSenate" v-bind:value="statemember.state"> {{statemember.state}} </option> 
+                  </select>  
+
+                  <div class="form-check">
+                    <label class="form-check-label mx-2">
+                       Democrata 
+                    <input v-model="partys" type="checkbox" name="party" value="D"  class="form-check-input" />
+                  </label>
+                  </div>
+                  <div class="form-check mx-2">
+                  <label class="form-check-label">
+                      Republicano 
+                      <input v-model="partys" type="checkbox" name="party" value="R"  class="form-check-input"/>
+                    </label>
+                  </div>
+                  <div class="form-check mx-2">
+                    <label class="form-check-label">
+                      Independiente
+                      <input v-model="partys" type="checkbox" name="party" value="ID" class="form-check-input"/>
+                    </label>
+                  </div>
+              </form>
+
+            <table class="table_senate">
+              <thead class="head_senate">
+                <tr>
+                  <th>Name &nbsp</th>
+                  <th>Party &nbsp</th>
+                  <th>State &nbsp</th>
+                  <th>Years in office &nbsp</th>
+                  <th>%Votes w/Party</th> 
+                </tr>
+              </thead>
+              <tbody class="body_senate"> 
+                <tr v-for=" senatemembers in memberFiltrados">
+                  <td>{{senatemembers.first_name}}</td>
+                  <td>{{senatemembers.party}}</td>
+                  <td>{{senatemembers.state}}</td>
+                  <td>{{senatemembers.seniority}}</td>
+                  <td>{{senatemembers.votes_with_party_pct}}</td>
+                </tr>
+              </tbody>
+            </table>          
+    </div>
+    <footer class="footer_house footer-expand-sm footer-dark text-center fw-bold" style="background-color: #3b769e;">
+      <span>2021 Data Insight Group | All Rights Reserved</span>
+    </footer>
+    <script src="./senate.js"></script>
+    <script src="./house.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script> 
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
